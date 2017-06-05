@@ -1,2 +1,3 @@
 # EFSIO-2017-2018
-Ella Fitzgerald BTS SIO
+Repertoire des BTS SIO Session 2017/2018 du LPO Ella Fitzgerald.
+Vous trouverez ici les ressources mis à votre disposition dans le cadre des Cours et TP
