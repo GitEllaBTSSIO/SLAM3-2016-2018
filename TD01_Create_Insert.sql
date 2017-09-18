@@ -10,7 +10,7 @@ CREATE TABLE ia_couche
   profondeur NUMBER(5),
   idR NUMBER(4),
   CONSTRAINT pk_couche PRIMARY KEY (idR, profondeur),
-  CONSTRAINT fk_couche FOREIGN KEY (idR) REFERENCES reseau(idR)
+  CONSTRAINT fk_couche FOREIGN KEY (idR) REFERENCES ia_reseau(idR)
 );
 
 CREATE TABLE ia_neuronne
@@ -20,7 +20,7 @@ CREATE TABLE ia_neuronne
   idR NUMBER(4),
   profondeur NUMBER(5),
   CONSTRAINT pk_neuronne PRIMARY KEY (idN),
-  CONSTRAINT fk_neuronne_pro FOREIGN KEY (idR, profondeur) REFERENCES couche(idR, profondeur)
+  CONSTRAINT fk_neuronne_pro FOREIGN KEY (idR, profondeur) REFERENCES ia_couche(idR, profondeur)
 );
 
 CREATE TABLE ia_connecter
@@ -29,8 +29,8 @@ CREATE TABLE ia_connecter
   idN_O NUMBER(4),
   poids VARCHAR(5),
   CONSTRAINT pk_neuronne_con PRIMARY KEY (idN_I, idN_O),
-  CONSTRAINT fk_neuronne_I FOREIGN KEY (idN_I) REFERENCES neuronne(idN),
-  CONSTRAINT fk_neuronne_O FOREIGN KEY (idN_O) REFERENCES neuronne(idN)
+  CONSTRAINT fk_neuronne_I FOREIGN KEY (idN_I) REFERENCES ia_neuronne(idN),
+  CONSTRAINT fk_neuronne_O FOREIGN KEY (idN_O) REFERENCES ia_neuronne(idN)
 );
 
 INSERT ALL
